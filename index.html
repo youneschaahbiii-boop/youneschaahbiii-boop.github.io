@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FindAHOME – Coliving & Rentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --accent: #1f7a8c;
+      --accent-soft: #e3f2f5;
+      --text: #222222;
+      --muted: #666666;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .logo { font-weight: 700; letter-spacing: 0.04em; }
+    .lang-toggle button {
+      border: none;
+      background: transparent;
+      margin-left: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+    .lang-toggle button.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    main {
+      max-width: 960px;
+      margin: 8px auto 40px;
+      padding: 0 24px 24px;
+    }
+    .hero {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+    }
+    @media (max-width: 720px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    h1 { font-size: clamp(1.8rem, 3vw, 2.2rem); margin-bottom: 12px; }
+    p.lead { color: var(--muted); margin-bottom: 18px; }
+    ul.benefits { list-style: none; margin-bottom: 18px; }
+    ul.benefits li { margin-bottom: 6px; color: var(--muted); }
+    ul.benefits li::before {
+      content: "• ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .contact-card {
+      background: var(--accent-soft);
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-size: 0.95rem;
+    }
+    .contact-line { margin-bottom: 8px; }
+    .contact-label { font-weight: 600; }
+    .cta-buttons { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.93rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    .btn-outline {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #ffffff;
+    }
+    section {
+      margin-top: 28px;
+      display: grid;
+      gap: 16px;
+    }
+    h2 { font-size: 1.2rem; }
+    .pill {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      margin-bottom: 4px;
+    }
+    footer {
+      max-width: 960px;
+      margin: 0 auto 16px;
+      padding: 0 24px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">FindAHOME</div>
+  <div class="lang-toggle">
+    <button id="btn-pt" class="active">PT</button>
+    <button id="btn-en">EN</button>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <div class="hero-grid">
+      <div id="hero-text-pt">
+        <span class="pill">Coliving & arrendamento flexível</span>
+        <h1>Quartos mobilados prontos a habitar em Lisboa</h1>
+        <p class="lead">
+          A FindAHOME gere quartos e apartamentos mobilados para estudantes,
+          jovens profissionais e nómadas digitais que procuram estadias médias e longas sem complicações.
+        </p>
+        <ul class="benefits">
+          <li>Contratos claros, internet incluída e limpeza regular das áreas comuns.</li>
+          <li>Processo de reserva simples e 100% online.</li>
+          <li>Apoio rápido por WhatsApp e email durante toda a estadia.</li>
+        </ul>
+      </div>
+
+      <div id="hero-text-en" style="display:none;">
+        <span class="pill">Coliving & flexible rentals</span>
+        <h1>Furnished rooms ready to move in, in Lisbon</h1>
+        <p class="lead">
+          FindAHOME manages furnished rooms and apartments for students,
+          young professionals and digital nomads looking for hassle‑free mid‑ to long‑term stays.
+        </p>
+        <ul class="benefits">
+          <li>Clear contracts, Wi‑Fi included and regular cleaning of common areas.</li>
+          <li>Simple, 100% online booking process.</li>
+          <li>Fast support via WhatsApp and email during your stay.</li>
+        </ul>
+      </div>
+
+      <div class="contact-card">
+        <div id="contact-pt">
+          <p class="contact-line">
+            <span class="contact-label">Precisas de um quarto?</span><br/>
+            Envia mensagem com as datas e orçamento e respondemos com as opções disponíveis.
+          </p>
+        </div>
+        <div id="contact-en" style="display:none;">
+          <p class="contact-line">
+            <span class="contact-label">Need a room?</span><br/>
+            Send your dates and budget and we’ll get back to you with available options.
+          </p>
+        </div>
+
+        <p class="contact-line">
+          <span class="contact-label">Email:</span>
+          <a href="mailto:youneschaahbiii@gmail.com">youneschaahbiii@gmail.com</a>
+        </p>
+        <p class="contact-line">
+          <span class="contact-label">WhatsApp:</span>
+          <a href="https://wa.me/351966210043" target="_blank">+351 966 210 043</a>
+        </p>
+
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="https://wa.me/351966210043" target="_blank" id="cta-primary">
+            Falar no WhatsApp
+          </a>
+          <a class="btn btn-outline" href="mailto:youneschaahbiii@gmail.com" id="cta-secondary">
+            Enviar email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="section-pt">
+    <div>
+      <h2>Como funciona</h2>
+      <p class="lead">
+        Diz‑nos o que procuras (datas, zona, orçamento) e sugerimos os quartos disponíveis
+        na nossa rede de apartamentos partilhados em Lisboa.
+      </p>
+    </div>
+    <div>
+      <h2>Para quem é a FindAHOME</h2>
+      <p class="lead">
+        Ideal para estudantes internacionais, jovens profissionais e trabalhadores remotos
+        que querem chegar a Lisboa e ter tudo pronto a usar desde o primeiro dia.
+      </p>
+    </div>
+  </section>
+
+  <section id="section-en" style="display:none;">
+    <div>
+      <h2>How it works</h2>
+      <p class="lead">
+        Tell us what you need (dates, area, budget) and we’ll suggest available rooms
+        in our shared apartments network in Lisbon.
+      </p>
+    </div>
+    <div>
+      <h2>Who FindAHOME is for</h2>
+      <p class="lead">
+        Perfect for international students, young professionals and remote workers
+        who want to arrive in Lisbon and have everything ready from day one.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> FindAHOME. All rights reserved.
+</footer>
+
+<script>
+  const btnPT = document.getElementById('btn-pt');
+  const btnEN = document.getElementById('btn-en');
+  const heroPT = document.getElementById('hero-text-pt');
+  const heroEN = document.getElementById('hero-text-en');
+  const secPT = document.getElementById('section-pt');
+  const secEN = document.getElementById('section-en');
+  const contactPT = document.getElementById('contact-pt');
+  const contactEN = document.getElementById('contact-en');
+  const ctaPrimary = document.getElementById('cta-primary');
+  const ctaSecondary = document.getElementById('cta-secondary');
+
+  function setLang(lang) {
+    const isPT = lang === 'pt';
+    heroPT.style.display = isPT ? 'block' : 'none';
+    heroEN.style.display = isPT ? 'none' : 'block';
+    secPT.style.display = isPT ? 'grid' : 'none';
+    secEN.style.display = isPT ? 'none' : 'grid';
+    contactPT.style.display = isPT ? 'block' : 'none';
+    contactEN.style.display = isPT ? 'none' : 'block';
+
+    btnPT.classList.toggle('active', isPT);
+    btnEN.classList.toggle('active', !isPT);
+    ctaPrimary.textContent = isPT ? 'Falar no WhatsApp' : 'Chat on WhatsApp';
+    ctaSecondary.textContent = isPT ? 'Enviar email' : 'Send email';
+  }
+
+  btnPT.addEventListener('click', () => setLang('pt'));
+  btnEN.addEventListener('click', () => setLang('en'));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
